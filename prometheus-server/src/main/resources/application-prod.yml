@@ -1,0 +1,28 @@
+server:
+  port: 19080
+
+# security
+spring:
+  security:
+    user:
+      name: seayaa
+      password: seayaa
+
+# eureka
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+
+# logging
+logging:
+  level:
+    root: info
