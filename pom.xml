@@ -21,6 +21,7 @@
 
     <modules>
         <module>prometheus-server</module>
+        <module>prometheus-admin</module>
     </modules>
 
     <dependencies>

@@ -1,0 +1,24 @@
+server:
+  port: 19010
+  servlet:
+    context-path: /admin
+
+# eureka
+eureka:
+  enabled: true
+  instance:
+    prefer-ip-address: true
+    appname: admin
+    app-group-name: prometheus
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://seayaa:seayaa@localhost:19080/eureka/
+    registry-fetch-interval-seconds: 30
+    initial-instance-info-replication-interval-seconds: 40
+
+# logging
+logging:
+  level:
+    root: info
