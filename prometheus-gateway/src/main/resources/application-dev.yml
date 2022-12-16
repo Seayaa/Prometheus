@@ -1,14 +1,14 @@
 server:
-  port: 19010
+  port: 8080
   servlet:
-    context-path: /admin
+    context-path: /gateway
 
 # eureka
 eureka:
   enabled: true
   instance:
     prefer-ip-address: true
-    appname: admin
+    appname: gateway
     app-group-name: prometheus
   client:
     healthcheck:
@@ -17,6 +17,19 @@ eureka:
       defaultZone: http://seayaa:seayaa@localhost:19080/eureka/eureka/
     registry-fetch-interval-seconds: 30
     initial-instance-info-replication-interval-seconds: 40
+
+# spring
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: prometheus-admin
+          uri: lb://prometheus-admin
+          predicates:
+            - Path=/admin/**
 
 # logging
 logging:
