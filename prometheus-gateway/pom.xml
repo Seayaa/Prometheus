@@ -11,6 +11,7 @@
     <artifactId>prometheus-gateway</artifactId>
     <name>prometheus-gateway</name>
     <description>Gateway Module</description>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -59,6 +60,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <executable>true</executable>
+                    <mainClass>org.seayaa.prometheus.gateway.PrometheusGatewayApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -66,6 +69,13 @@
                         </exclude>
                     </excludes>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

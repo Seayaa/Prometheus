@@ -11,6 +11,7 @@
     <artifactId>prometheus-admin</artifactId>
     <name>prometheus-admin</name>
     <description>Admin module</description>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -47,6 +48,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <executable>true</executable>
+                    <mainClass>org.seayaa.prometheus.admin.PrometheusAdminApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -54,6 +57,13 @@
                         </exclude>
                     </excludes>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
