@@ -8,13 +8,16 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.seayaa</groupId>
     <artifactId>prometheus-admin</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>prometheus-admin</name>
-    <description>prometheus-admin</description>
+    <description>Admin module</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.seayaa</groupId>
+            <artifactId>prometheus-common</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

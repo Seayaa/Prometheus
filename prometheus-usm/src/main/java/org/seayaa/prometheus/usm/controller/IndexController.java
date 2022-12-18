@@ -1,6 +1,6 @@
-package org.seayaa.prometheus.admin.controller;
+package org.seayaa.prometheus.usm.controller;
 
-import org.seayaa.prometheus.common.feign.PrometheusUsmService;
+import org.seayaa.prometheus.common.feign.PrometheusAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexController {
 
     @Autowired
-    private PrometheusUsmService prometheusUsmService;
+    private PrometheusAdminService prometheusAdminService;
 
     @GetMapping("/ping")
     public String ping() {
-        return "ping admin success";
+        return "ping usm success";
     }
 
-    @GetMapping("/callUsm")
-    public String callUsm() {
-        return prometheusUsmService.ping();
+    @GetMapping("/callAdmin")
+    public String callAdmin() {
+        return prometheusAdminService.ping();
     }
 }

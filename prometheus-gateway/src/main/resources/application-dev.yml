@@ -30,6 +30,10 @@ spring:
           uri: lb://prometheus-admin
           predicates:
             - Path=/admin/**
+        - id: prometheus-usm
+          uri: lb://prometheus-usm
+          predicates:
+            - Path=/usm/**
 
 # logging
 logging:

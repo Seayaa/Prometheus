@@ -1,14 +1,14 @@
 server:
-  port: 19010
+  port: 19020
   servlet:
-    context-path: /admin
+    context-path: /usm
 
 # eureka
 eureka:
   enabled: true
   instance:
     prefer-ip-address: true
-    appname: admin
+    appname: usm
     app-group-name: prometheus
   client:
     healthcheck:
@@ -22,6 +22,14 @@ eureka:
 logging:
   level:
     root: info
+
+# database
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/prometheus?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: seayaa
+    password: seayaa
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 feign:
   circuitbreaker:

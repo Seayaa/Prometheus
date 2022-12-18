@@ -8,11 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.seayaa</groupId>
     <artifactId>prometheus-gateway</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>prometheus-gateway</name>
-    <description>prometheus-gateway</description>
+    <description>Gateway Module</description>
 
     <dependencies>
         <dependency>
